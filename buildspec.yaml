@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    IMAGE_REPO_NAME: "react_application_repository"
+    IMAGE_REPO_NAME: "medhealthplatform-website"
 
 phases:
   pre_build:
@@ -33,7 +33,7 @@ phases:
 
         # Define variables
         IMAGE_REPO_NAME="$IMAGE_REPO_NAME"
-        CONTAINER_NAME="react_application_repository"
+        CONTAINER_NAME="medhealthplatform-website"
 
         # Stop and remove the old container (if it exists)
         docker stop \$CONTAINER_NAME || true
