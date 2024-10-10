@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    IMAGE_REPO_NAME: "medhealthplatform-website"
+    IMAGE_REPO_NAME: "growthccorp-website"
 
 phases:
   pre_build:
@@ -33,7 +33,7 @@ phases:
 
         # Define variables
         IMAGE_REPO_NAME="$IMAGE_REPO_NAME"
-        CONTAINER_NAME="medhealthplatform-website"
+        CONTAINER_NAME="growthccorp-website"
 
         # Stop and remove the old container (if it exists)
         docker stop \$CONTAINER_NAME || true
@@ -45,7 +45,7 @@ phases:
         docker pull 713881792798.dkr.ecr.us-east-1.amazonaws.com/$IMAGE_REPO_NAME:$UPDATED_BUILD_NUMBER
         
         # Run the new container
-        docker run -itd --name \$CONTAINER_NAME -p 90:80 713881792798.dkr.ecr.us-east-1.amazonaws.com/$IMAGE_REPO_NAME:$UPDATED_BUILD_NUMBER
+        docker run -itd --name \$CONTAINER_NAME -p 85:80 713881792798.dkr.ecr.us-east-1.amazonaws.com/$IMAGE_REPO_NAME:$UPDATED_BUILD_NUMBER
         EOT
       - |
         # Write appspec.yml for CodeDeploy
